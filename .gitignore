@@ -1,5 +1,6 @@
 netcell.err
 netcell.out
+*.log
 netcell_lib/
 *.jar
 .classpath

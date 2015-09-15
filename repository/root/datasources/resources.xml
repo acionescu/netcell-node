@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
+<resources>
+   <resource id="velocityCommandBuilder" class="ro.zg.scriptdao.core.VelocityCommandBuilder"></resource>
+   <resource id="sqlCommandBuilder" class="ro.zg.scriptdao.sql.SqlCommandBuilder"></resource>
+   <resource id="cassandraCommandBuilder" class="ro.zg.netcell.datasources.builders.cassandra.CassandraVelocityCommandBuilder"></resource>
+   <!-- database -->
+   <resource id="databaseCommandExecutor"
+      class="ro.zg.netcell.datasources.executors.db.DatabaseCommandExecutor"></resource>
+   <resource id="databaseResponseTranslator"
+      class="ro.zg.netcell.datasources.translators.DatabaseResponseTranslator"></resource>
+   <!-- http -->
+   <resource id="httpCommandExecutor"
+      class="ro.zg.netcell.datasources.executors.http.HttpCommandExecutor"></resource>
+   <resource id="httpResponseTranslator"
+      class="ro.zg.netcell.datasources.translators.HttpResponseTranslator"></resource>
+   <!-- cassandra -->
+   <resource id="cassandraCommandExecutor"
+      class="ro.zg.netcell.datasources.executors.cassandra.CassandraCommandExecutor"></resource>
+   <resource id="cassandraResponseTranslator"
+      class="ro.zg.netcell.datasources.translators.CassandraResponseTranslator"></resource>
+   <!-- netcell -->
+   <resource id="netcellCommandExecutor"
+      class="ro.zg.netcell.datasources.executors.netcell.NetcellCommandExecutor"></resource>
+   <resource id="netcellResponseTranslator"
+      class="ro.zg.netcell.datasources.translators.NetcellResponseTranslator"></resource>
+</resources>

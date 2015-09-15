@@ -1,0 +1,6 @@
+<!ELEMENT access-rule EMPTY>
+<!ATTLIST access-rule id NMTOKEN #REQUIRED >
+<!ATTLIST access-rule target-path-regex CDATA #REQUIRED >
+<!ATTLIST access-rule validation-flow-id CDATA #REQUIRED >
+
+<!ELEMENT access-rules ( access-rule* ) >

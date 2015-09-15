@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
+<resources>
+   <resource id="JsonResponseFormatter"
+      class="ro.zg.netcell.control.commands.formatters.AbstractObjectFormatter"
+      init-method="init">
+      <property name="formatters">
+         <value>
+            <map>
+               <entry key="GenericNameValue">
+                  <value-ref>JsonGenericNameValueFormatter</value-ref>
+               </entry>
+               <entry key="Collection">
+                  <value-ref>JsonCollectionFormatter</value-ref>
+               </entry>
+               <entry key="Map">
+                  <value-ref>JsonMapFormatter</value-ref>
+               </entry>
+               <entry key="GenericNameValueContext">
+                  <value-ref>JsonGenericNameValueContextFormatter</value-ref>
+               </entry>
+               <entry key="GenericNameValueList">
+                  <value-ref>JsonGenericNameValueListFormatter</value-ref>
+               </entry>
+               <entry key="java.lang.String">
+                  <value-ref>JsonStringFormatter</value-ref>
+               </entry>
+                <entry key="CommandResponse">
+                  <value-ref>JsonGenericNameValueContextFormatter</value-ref>
+               </entry>
+                <entry key="ExceptionContext">
+                  <value-ref>JsonGenericNameValueContextFormatter</value-ref>
+               </entry>
+            </map>
+         </value>
+      </property>
+      <property name="defaultFormatter" value-ref="jsonreflectiveFormatter"></property>
+   </resource>
+   <resource id="jsonreflectiveFormatter"
+      class="ro.zg.netcell.control.commands.formatters.ReflectiveFormatter"></resource>
+      
+   <resource id="JsonGenericNameValueFormatter"
+      class="ro.zg.netcell.control.commands.formatters.GenericNameValueFormatter">
+      <property name="associationEelement" value=":"></property>
+   </resource>
+   <resource id="JsonCollectionFormatter"
+      class="ro.zg.netcell.control.commands.formatters.CollectionFormatter">
+      <property name="startElement" value="["></property>
+      <property name="endElement" value="]"></property>
+   </resource>
+   <resource id="JsonMapFormatter"
+      class="ro.zg.netcell.control.commands.formatters.MapFormatter">
+      <property name="startElement" value="{"></property>
+      <property name="endElement" value="}"></property>
+      <property name="associationEelement" value=":"></property>
+   </resource>
+   <resource id="JsonGenericNameValueContextFormatter" class="ro.zg.netcell.control.commands.formatters.GenericNameValueContextFormatter">
+      <property name="startElement" value="{"></property>
+      <property name="endElement" value="}"></property>
+   </resource>
+    <resource id="JsonGenericNameValueListFormatter" class="ro.zg.netcell.control.commands.formatters.GenericNameValueListFormatter">
+      <property name="startElement" value="["></property>
+      <property name="endElement" value="]"></property>
+   </resource>
+   <resource id="JsonStringFormatter" class="ro.zg.netcell.control.commands.formatters.StringFormatter">
+      <property name="stringDelimiter" value="&quot;"></property>
+   </resource>
+</resources>

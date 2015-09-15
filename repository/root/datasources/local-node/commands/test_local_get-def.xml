@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE command SYSTEM "../../../../dtds/script-dao-commands.dtd">
+<command name="test.local.get-def" type="CAS">
+      <script>
+      get_definition_types(parent-type=datasource-definition)
+   </script>
+</command>

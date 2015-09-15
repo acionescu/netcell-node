@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE access-rules SYSTEM "../../../dtds/custom-access-rules.dtd">
+
+<access-rules>
+	<access-rule id="ro.zg.problems.access-rule" target-path-regex="ro.problems.flows.get-entity-info-by-id" validation-flow-id="ro.problems.flows.security.check-is-action-allowed" />
+<!-- 	<access-rule id="ro.zg.problems.access-rule-test" target-path-regex="ro.problems.flows.save-entity-link-user-data" validation-flow-id="ro.problems.flows.security.check-is-action-allowed" /> -->
+</access-rules>
+

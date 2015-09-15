@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE entities SYSTEM "../../../../../dtds/entities.dtd">
+<entities>
+   <entity id="ro.zg.util.parser.simple-xml-parser" type="configurable-component-definition"
+      logic-type="dynamic-wrapper">
+      <entity logic-type="config">
+         <entity type="definition-params" logic-type="static-parameters">
+            <value>
+               <map>
+                  <entry key="inputParameters">
+                     <value>
+                        <list>
+                           <value>
+                              <entity type="input-parameter">
+                                 <property name="name" value="input"></property>
+                                 <property name="type" value="String"></property>
+                                 <property name="mandatory"
+                                    value="true"></property>
+                              </entity>
+                           </value>
+                        </list>
+                     </value>
+                  </entry>
+                  <entry key="executionEntity">
+                     <value-ref>parserEntity</value-ref>
+                  </entry>
+                  <entry key="outputParameters">
+                     <value>
+                        <list>
+                           <value>
+                              <entity type="output-parameter">
+                                 <property name="name" value="result"></property>
+                                 <property name="type"
+                                    value="List[]"></property>
+                              </entity>
+                           </value>
+                        </list>
+                     </value>
+                  </entry>
+               </map>
+            </value>
+         </entity>
+         <entity type="user-params" logic-type="user-parameters">
+            
+<entity type="config-data">
+<property name="templateId" value="TEXT_PARSER"/>
+             <property name="userInputParams">
+            <value>
+               <map>
+                                      <entry key="PARSER_SYMBOLS">
+   <value>
+      <entity type="user-input-parameter">
+         <property name="name" value="PARSER_SYMBOLS"></property>
+                  <property name="value" value="[&lt;!--,GROUP_START:SEPARATE:IGNORE,comment_start,true,comment_end],[--&gt;,GROUP_END,comment_end], [&lt;?xml,GROUP_START:IGNORE,xml_desc_start,true,xml_desc_end],[?&gt;,GROUP_END,xml_desc_end],[&lt;/,GROUP_END_START:IGNORE,close_elem_start,true,close_elem_end],[&gt;,GROUP_END,close_elem_end],[&lt;,GROUP_START:IGNORE_EMPTY,start_elem,true,close_elem_start,end_elem2,content_start,space,tab,return,newline,equals_assoc,start_elem], [/&gt;,GROUP_END,end_elem2][&gt;,GROUP_START:SEPARATE:IGNORE_EMPTY,content_start,false,cdata_start,comment_start,content_end,start_elem,html_escape_start,string_concat],[&lt;/,GROUP_END:MULTIPLE:UNGROUP,content_end],[&apos;&lt;![CDATA[&apos;,GROUP_START:SIMPLE,cdata_start,true,cdata_end],[&apos;]]&gt;&apos;,GROUP_END,cdata_end],[ ,SEPARATE:REPEATABLE,space],[&apos;\\t&apos;,SEPARATE:REPEATABLE,tab],[&apos;\\r&apos;,SEPARATE:REPEATABLE,return],[&apos;\\n&apos;,SEPARATE:REPEATABLE,newline],[=,ASSOCIATE,equals_assoc],[&amp;,GROUP_START:SEPARATE,html_escape_start,false,html_escape_end,html_escaper],[;,GROUP_END:UNGROUP,html_escape_end],[&apos;{}&apos;,WORKER:STRING_CONCAT,string_concat],[&apos;{lt=&lt;,gt=&gt;,amp=&amp;,#38=&amp;,quot=\\\&quot;,apos=\&apos;,#8220=&#8220;,#8221=&#8221;,#8216=&#8216;,#8217=&#8217;,#39=\&apos;,#8230=&#8230;,#34=\\\&quot;,#8211=&#8211;,#39=\&apos;,#215=&#215;,#8212=&#8212;,#x2F=/,#x27=\&apos;}&apos;,WORKER:MAPPER,html_escaper]"></property>
+                           <property name="type" value="String"></property>
+                           <property name="inputType" value="UNKNOWN_LARGE_VALUE"></property>
+                        </entity>
+   </value>
+</entry>                                </map>
+            </value>
+         </property>
+               
+                     
+                  </entity>
+         </entity>
+         <entity logic-type="original-input-name">
+            <value>inputContext</value>
+         </entity>
+         <entity logic-type="executor">
+            <entity-ref ref-id="executionEntityWrapper" />
+         </entity>
+      </entity>
+   </entity>
+</entities>

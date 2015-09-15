@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE entities SYSTEM "../../../dtds/entities.dtd">
+<entities>
+   <entity id="local-node-connection-manager" type="connection-manager"
+      logic-type="netcell">
+      <property name="dataSourceDefinition">
+         <value>
+            <entity id="local-node" type="datasource-definition">
+               <property name="datasourceType" value="NETCELL"></property>
+               <property name="configData">
+                  <value>
+                     <entity type="config-data">
+                        <property name="userInputParams">
+                           <value>
+                              <map>
+                                 <entry key="IS_LOCAL">
+                                    <value>
+                                       <entity type="user-input-parameter">
+                                          <property name="name"
+                                             value="IS_LOCAL"></property>
+                                          <property name="value"
+                                             value="true"></property>
+                                          <property name="type"
+                                             value="Boolean"></property>
+                                          <property name="inputType"
+                                             value="UNKNOWN_VALUE"></property>
+                                       </entity>
+                                    </value>
+                                 </entry>
+                              </map>
+                           </value>
+                        </property>
+                        <property name="staticConfigParams">
+                           <value>
+                              <map>
+                                 <entry key="DATA_ACCESS_COMPONENT_PARAMS">
+                                    <value>
+                                       <entity type="static-config-parameter">
+                                          <property name="name"
+                                             value="DATA_ACCESS_COMPONENT_PARAMS"></property>
+                                          <property name="value">
+                                             <value>
+                                                <map>
+                                                   <entry key="COMMAND_TYPE">
+                                                      <value>
+                                                         <entity
+                                                            type="user-input-parameter">
+                                                            <property
+                                                               name="name"
+                                                               value="COMMAND_TYPE"></property>
+                                                            <property
+                                                               name="type"
+                                                               value="String"></property>
+                                                            <property
+                                                               name="inputType"
+                                                               value="VALUE_FROM_LIST"></property>
+                                                            <property
+                                                               name="allowedValues">
+                                                               <value>
+                                                                  <list>
+                                                                     <value>
+                                                                        CAS
+                                                                     </value>
+                                                                  </list>
+                                                               </value>
+                                                            </property>
+                                                         </entity>
+                                                      </value>
+                                                   </entry>
+                                                   <entry
+                                                      key="COMMAND_CONTENT">
+                                                      <value>
+                                                         <entity
+                                                            type="user-input-parameter">
+                                                            <property
+                                                               name="name"
+                                                               value="COMMAND_CONTENT"></property>
+                                                            <property
+                                                               name="type"
+                                                               value="String"></property>
+                                                            <property
+                                                               name="inputType"
+                                                               value="UNKNOWN_LARGE_VALUE"></property>
+                                                         </entity>
+                                                      </value>
+                                                   </entry>
+                                                </map>
+                                             </value>
+                                          </property>
+                                       </entity>
+                                    </value>
+                                 </entry>
+                              </map>
+                           </value>
+                        </property>
+                     </entity>
+                  </value>
+               </property>
+            </entity>
+         </value>
+      </property>
+   </entity>
+</entities>

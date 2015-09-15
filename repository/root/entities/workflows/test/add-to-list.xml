@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE entities SYSTEM "../../dtds/entities.dtd">
+<entities>
+   <entity id="test.add-to-list" type="workflow-definition"
+      logic-type="dynamic-wrapper">
+      <entity type="description">
+         <value>$workflowDefinition.getDescription()</value>
+      </entity>
+      <entity logic-type="config">
+         <entity type="definition-params" logic-type="static-parameters">
+            <value>
+               <map>
+                  												<entry key="localParameters">
+							<value>
+								<list>
+																		<value>
+										<entity type="local-parameter">
+	<property name="name" value="list"></property>
+		<property name="type" value="List[Number]"></property>
+			<property name="value" value="[1,2,3]"></property>
+	</entity>								</value>
+																	</list>
+							</value>
+						</entry>
+												<entry key="executionEntity">
+							<value>
+																<entity type="workflow" logic-type="dynamic-wrapper">
+   <entity logic-type="config">
+      <entity logic-type="executor">
+         <entity-ref ref-id="workFlow" />
+      </entity>
+<!--      <entity logic-type="original-input-name">-->
+<!--         <value>inputContext</value>-->
+<!--      </entity>-->
+      <entity type="workflow-params" logic-type="static-parameters">
+         <value>
+            <map>
+               <entry key="defaultEntryPointId" value="core.collections.append-to-list_0">
+               </entry>
+               <entry key="components">
+                  <value>
+                     <map>
+                                                 <entry key="core.collections.append-to-list_0">
+                           <value>                               <entity type="workflow-component">
+		<entity type="component" logic-type="component">
+	<entity logic-type="dynamic-wrapper">
+		<entity logic-type="config">
+			<entity logic-type="executor">
+				<entity-ref ref-id="core.collections.append-to-list" />
+			</entity>
+<!--			<entity logic-type="original-input-name">-->
+<!--				<value>argsContext</value>-->
+<!--			</entity>-->
+									<entity logic-type="static-parameters">
+				<value>
+					<map>
+													<entry key="value">
+                                                                                                                  								<value-type value="6" type="String"/>
+							                                                                                                                  </entry>
+											</map>
+				</value>
+			</entity>
+									<entity logic-type="dynamic-parameters">
+				<value>
+					<map>
+													<entry key="list" value="list"/>
+											</map>
+				</value>
+			</entity>
+					</entity>
+	</entity>
+</entity>		
+		<entity type="flow-logic" logic-type="flow-logic">
+      <property name="exitLabel" value="exit" />
+   </entity>               
+                                                </entity>                           </value>
+                        </entry>
+                                             </map>
+                  </value>
+               </entry>
+            </map>
+         </value>
+      </entity>
+      <entity logic-type="dynamic-parameters">
+         <value>
+            <map>
+               <entry key="inputContext" value="origContext"></entry>
+               <entry key="entryPointId" value="entryPointId"></entry>
+               <entry key="isAsyncContext" value="isAsyncContext"></entry>
+            </map>
+         </value>
+      </entity>
+   </entity>
+</entity>						</value>
+						</entry>
+												<entry key="outputParameters">
+							<value>
+								<list>
+									
+																		<value>
+										<entity type="output-parameter">
+	<property name="name" value="list"></property>
+		<property name="type" value="List[Number]"></property>
+	</entity>								</value>
+																	</list>
+							</value>
+						</entry>
+											</map>
+				</value>
+			</entity>
+			<entity logic-type="original-input-name">
+				<value>inputContext</value>
+			</entity>
+			<entity logic-type="executor">
+				<entity-ref ref-id="workflowAdapterEntity" />
+			</entity>
+		</entity>
+	</entity>
+</entities>

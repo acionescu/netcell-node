@@ -3,6 +3,7 @@ netcell.out
 *.log
 netcell_lib/
 *.jar
+*.pid
 .classpath
 .settings
 .project

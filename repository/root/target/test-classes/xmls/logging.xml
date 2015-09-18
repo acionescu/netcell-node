@@ -2,9 +2,9 @@
 <!DOCTYPE resources SYSTEM "../dtds/workflow-engine.dtd">
 
 <resources>
-	<resource id="DefaultLogManager" class="ro.zg.util.logging.DefaultLogManager">
+	<resource id="DefaultLogManager" class="net.segoia.util.logging.DefaultLogManager">
 		<property name="defaultLoggerFactory" value-ref="SystemOutLoggerFactory"></property>
 	</resource>
 	
-	<resource id="SystemOutLoggerFactory" class="ro.zg.util.logging.SystemOutLoggerFactory"></resource>
+	<resource id="SystemOutLoggerFactory" class="net.segoia.util.logging.SystemOutLoggerFactory"></resource>
 </resources>

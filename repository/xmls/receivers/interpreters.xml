@@ -1,21 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    netcell-node - A basic netcell node configuration
+    Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
 <resources>
    <resource id="CasCommandInterpreter"
-      class="ro.zg.netcell.control.commands.interpreters.cas.CasCommandInterpreter">
+      class="net.segoia.netcell.control.commands.interpreters.cas.CasCommandInterpreter">
       <property name="formatter" value-ref="CasResponseFormatter"></property>
    </resource>
    <resource id="CasInterpreterWrapper"
-      class="ro.zg.netcell.entities.ExceptionHandlingWrapper">
+      class="net.segoia.netcell.entities.ExceptionHandlingWrapper">
       <property name="exceptionHandler" value-ref="OuterBorderExceptionHandler"></property>
       <property name="wrappedEntity" value-ref="CasCommandInterpreter"></property>
    </resource>
    <resource id="JsonCommandInterpreter"
-      class="ro.zg.netcell.control.commands.interpreters.jsonrpc.JsonrpcCommandInterpreter">
+      class="net.segoia.netcell.control.commands.interpreters.jsonrpc.JsonrpcCommandInterpreter">
       <property name="formatter" value-ref="JsonResponseFormatter"></property>
    </resource>
    <resource id="JsonInterpreterWrapper"
-      class="ro.zg.netcell.entities.ExceptionHandlingWrapper">
+      class="net.segoia.netcell.entities.ExceptionHandlingWrapper">
       <property name="exceptionHandler" value-ref="OuterBorderExceptionHandler"></property>
       <property name="wrappedEntity" value-ref="JsonCommandInterpreter"></property>
    </resource>

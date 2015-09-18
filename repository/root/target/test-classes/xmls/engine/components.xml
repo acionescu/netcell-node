@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE components SYSTEM "../../dtds/workflow-engine.dtd">
 <components>
-	<component id="DummyComponent" class="ro.zg.synapse.engine.configuration.DummyWorkFlowComponent">
+	<component id="DummyComponent" class="net.segoia.synapse.engine.configuration.DummyWorkFlowComponent">
 	</component>
 	
-	<component id="ExceptionalComponent" class="ro.zg.synapse.engine.configuration.ExceptionThrowingComponent">
+	<component id="ExceptionalComponent" class="net.segoia.synapse.engine.configuration.ExceptionThrowingComponent">
 	</component>
 	
-	<component id="Comparator" class="ro.zg.synapse.engine.components.ComparatorComponent">
+	<component id="Comparator" class="net.segoia.synapse.engine.components.ComparatorComponent">
 		<component-configuration>
 			<input-parameters>
 				<input-parameter name="referenceValue" mandatory="true"/>
@@ -16,7 +16,7 @@
 		</component-configuration>
 	</component>
 	
-	<component id="InputMapper" class="ro.zg.synapse.engine.components.InputMapperComponent">
+	<component id="InputMapper" class="net.segoia.synapse.engine.components.InputMapperComponent">
 		<component-configuration>
 			<input-parameters>
 				<input-parameter name="filterParameters" mandatory="true"></input-parameter>

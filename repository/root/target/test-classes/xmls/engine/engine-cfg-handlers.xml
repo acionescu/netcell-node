@@ -2,17 +2,17 @@
 <!DOCTYPE configuration SYSTEM "../../dtds/entry-point.dtd">
 <configuration>
 	<cfg-handler id="valueCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.ValueConfigurationHandler" />
+		class="net.segoia.cfgengine.core.configuration.handlers.ValueConfigurationHandler" />
 	<cfg-handler id="defaultCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
 	</cfg-handler>
 	<cfg-handler id="simpleCustomCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler">
 		<property name="hasIdAttribute" value="false"></property>
 	</cfg-handler>
 	<cfg-handler id="componentWrapperCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.WorkFlowExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.WorkFlowExecutionEntityWrapper">
 		<property name="alwaysUseDefaultClass" value="true"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -32,8 +32,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="componentExecutionContextCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.EntityExecutionContextImpl">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.EntityExecutionContextImpl">
 		<property name="alwaysUseDefaultClass" value="true"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -62,8 +62,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="componentInputParamsListenerCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.listeners.ComponentInputParametersProcessingListener">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.listeners.ComponentInputParametersProcessingListener">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="tagsToProperties">
 			<value>
@@ -83,8 +83,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowContextCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.WorkFlowExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.WorkFlowExecutionEntityWrapper">
 		<property name="attributesToProperties">
 			<value>
 				<map>
@@ -103,8 +103,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowExecutionContextCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.EntityExecutionContextImpl">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.EntityExecutionContextImpl">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultInitMethod" value="init"></property>
 		<property name="attributesToProperties">
@@ -152,8 +152,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="sessionListenerCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.listeners.WorkFlowSessionHandlingListener">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.listeners.WorkFlowSessionHandlingListener">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="attributesToProperties">
 			<value>
@@ -187,8 +187,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="sessionConfigHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.session.WorkFlowSessionConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.session.WorkFlowSessionConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="attributesToProperties">
 			<value>
@@ -234,8 +234,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="sessionActionCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.session.SessionActionConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.session.SessionActionConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="attributesToProperties">
 			<value>
@@ -248,12 +248,12 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="sessionParametersHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.TypedValueConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.TypedValueConfigurationHandler">
 		<property name="valueAttributeName" value="name"></property>
 	</cfg-handler>
 	<cfg-handler id="workflowParamMappingListenerHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.listeners.WorkFlowInputOutputParameterProcessingListener">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.listeners.WorkFlowInputOutputParameterProcessingListener">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="tagsToProperties">
 			<value>
@@ -277,8 +277,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="inputParametersProcessorCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.util.GenericInputParametersProcessor">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.util.GenericInputParametersProcessor">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="tagsToProperties">
 			<value>
@@ -298,8 +298,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowInputParameterCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.vo.WorkFlowInputParameter">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.vo.WorkFlowInputParameter">
 		<property name="hasIdAttribute" value="false"></property>
 <!--		<property name="defaultInitMethod" value="init"></property>-->
 		<property name="attributesToProperties">
@@ -334,8 +334,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowParameterCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.data.GenericNameValue">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.data.GenericNameValue">
 		<property name="hasIdAttribute" value="false"></property>
 <!--		<property name="defaultInitMethod" value="init"></property>-->
 		<property name="attributesToProperties">
@@ -356,8 +356,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowComponentParameterMappingListenerHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.listeners.ComponentParameterMappingListener">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.listeners.ComponentParameterMappingListener">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultInitMethod" value="init"></property>
 		<property name="tagsToProperties">
@@ -395,12 +395,12 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="wfParameterMappingHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.TypedValueConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.TypedValueConfigurationHandler">
 		<property name="valueAttributeName" value="context-name"></property>
 	</cfg-handler>
 	<cfg-handler id="workFlowComponentCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.WorkFlowExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.WorkFlowExecutionEntityWrapper">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="attributesToProperties">
 			<value>
@@ -420,8 +420,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowComponentExecutionContextCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.EntityExecutionContextImpl">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.EntityExecutionContextImpl">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultInitMethod" value="init"></property>
 		<property name="defaultReferencesForProperties">
@@ -475,8 +475,8 @@
 	
 	<!-- workflow configuration -->
 	<cfg-handler id="workFlowCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.WorkFlow">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.WorkFlow">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="tagsToProperties">
 			<value>
@@ -523,7 +523,7 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="componentExitPointsMappingsHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomMapConfigurationHandler"
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomMapConfigurationHandler"
 		default-class="java.util.HashMap">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="keyAttributeNames">
@@ -544,8 +544,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="compExitPointMappingHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.vo.ComponentExitPointMapping">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.vo.ComponentExitPointMapping">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="attributesToProperties">
 			<value>
@@ -558,12 +558,12 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowLoggingListenerHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.listeners.util.WorkFlowLoggingListener">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.listeners.util.WorkFlowLoggingListener">
 		<property name="hasIdAttribute" value="false"></property>
 	</cfg-handler>
 	<cfg-handler id="rootHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
 		<property name="localConfigurationHandlers">
 			<value>
 				<map>

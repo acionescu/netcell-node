@@ -2,16 +2,16 @@
 <!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
 
 <resources>
-	<resource id="EngineControllerConfig" class="ro.zg.synapse.control.WorkFlowEngineControllerConfiguration">
+	<resource id="EngineControllerConfig" class="net.segoia.synapse.control.WorkFlowEngineControllerConfiguration">
 		<property name="engineDir" value="engine"></property>
 		<property name="engineLoader" value-ref="WorkFlowEngineLoader"/>
 	</resource>
 	
-	<resource id="BusController" class="ro.zg.synapse.control.BusController">
+	<resource id="BusController" class="net.segoia.synapse.control.BusController">
 		<property name="config" value-ref="BusConfiguration"></property>
 	</resource>
 	
-	<resource id="BusConfiguration" class="ro.zg.synapse.control.BusConfiguration">
+	<resource id="BusConfiguration" class="net.segoia.synapse.control.BusConfiguration">
 		<property name="engineLoader" value-ref="WorkFlowEngineLoader"/>
 		<property name="resourcesManager" value-ref="BusResourcesManager"></property>
 		<property name="publicEntities">
@@ -26,7 +26,7 @@
 		</property>
 	</resource>
 	
-	<resource id="BusResourcesManager" class="ro.zg.synapse.control.ResourcesManager">
+	<resource id="BusResourcesManager" class="net.segoia.synapse.control.ResourcesManager">
 		<property name="entitiesRelativePaths">
 			<value>
 				<map>
@@ -38,5 +38,5 @@
 		</property>
 	</resource>
 	
-	<resource id="WorkFlowEngineLoader" class="ro.zg.synapse.engine.WorkFlowEngineLoader"></resource>
+	<resource id="WorkFlowEngineLoader" class="net.segoia.synapse.engine.WorkFlowEngineLoader"></resource>
 </resources>

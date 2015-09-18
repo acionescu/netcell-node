@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    netcell-node - A basic netcell node configuration
+    Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
 
 <resources>
 	
-	<resource id="ErrorResponsesManager" class="ro.zg.synapse.control.commands.CommandResponsesManager">
+	<resource id="ErrorResponsesManager" class="net.segoia.synapse.control.commands.CommandResponsesManager">
 		<property name="internalErrorResponseCode" value="rc9999"/>
 		
 		<property name="exceptionsResponseCodesMap">
@@ -11,7 +29,7 @@
 				<map>
 					<entry key="SERVICE_NOT_AVAILABLE">
 						<value>
-							<resource id="SERVICE_NOT_AVAILABLE" class="ro.zg.synapse.control.commands.DefaultResponseBuilder">
+							<resource id="SERVICE_NOT_AVAILABLE" class="net.segoia.synapse.control.commands.DefaultResponseBuilder">
 								<property name="responseCode" value="rc100"></property>
 							</resource>
 						</value>
@@ -19,7 +37,7 @@
 					
 					<entry key="WRONG_COMMAND_FORMAT">
 						<value>
-							<resource  id="WRONG_COMMAND_FORMAT" class="ro.zg.synapse.control.commands.DefaultResponseBuilder">
+							<resource  id="WRONG_COMMAND_FORMAT" class="net.segoia.synapse.control.commands.DefaultResponseBuilder">
 								<property name="responseCode" value="rc101"></property>
 							</resource>
 						</value>
@@ -27,7 +45,7 @@
 					
 					<entry key="UNKNOWN_COMMAND">
 						<value>
-							<resource id="UNKNOWN_COMMAND" class="ro.zg.synapse.control.commands.DefaultResponseBuilder">
+							<resource id="UNKNOWN_COMMAND" class="net.segoia.synapse.control.commands.DefaultResponseBuilder">
 								<property name="responseCode" value="rc102"></property>
 								<property name="parameterNames">
 									<value>
@@ -42,7 +60,7 @@
 					
 					<entry key="INTERNAL_ERROR">
 						<value>
-							<resource id="INTERNAL_ERROR" class="ro.zg.synapse.control.commands.DefaultResponseBuilder">
+							<resource id="INTERNAL_ERROR" class="net.segoia.synapse.control.commands.DefaultResponseBuilder">
 								<property name="responseCode" value="rc9999"></property>
 							</resource>
 						</value>
@@ -50,7 +68,7 @@
 					
 					<entry key="MANDATORY_PARAMETER_VALIDATION_ERROR">
 						<value>
-							<resource id="MANDATORY_PARAMETER_VALIDATION_ERROR" class="ro.zg.synapse.control.commands.DefaultResponseBuilder">
+							<resource id="MANDATORY_PARAMETER_VALIDATION_ERROR" class="net.segoia.synapse.control.commands.DefaultResponseBuilder">
 								<property name="responseCode" value="rc103"></property>
 								<property name="parameterNames">
 									<value>
@@ -65,7 +83,7 @@
 					
 					<entry key="VALIDATION_ERROR">
 						<value>
-							<resource id="VALIDATION_ERROR" class="ro.zg.synapse.control.commands.DefaultResponseBuilder">
+							<resource id="VALIDATION_ERROR" class="net.segoia.synapse.control.commands.DefaultResponseBuilder">
 								<property name="responseCode" value="rc104"></property>
 								<property name="parameterNames">
 									<value>

@@ -5,3 +5,5 @@ netcell_lib/
 *.jar
 .classpath
 .settings
+.project
+target

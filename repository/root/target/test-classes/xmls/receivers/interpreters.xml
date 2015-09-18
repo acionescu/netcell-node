@@ -3,12 +3,12 @@
 
 <resources>
 
-	<resource id="CasCommandInterpreter" class="ro.zg.netcell.control.commands.interpreters.cas.CasCommandInterpreter">
+	<resource id="CasCommandInterpreter" class="net.segoia.netcell.control.commands.interpreters.cas.CasCommandInterpreter">
 		<property name="formatter" value-ref="CasResponseFormatter"></property>
 	</resource>
 	
 	
-	<resource id="CasInterpreterWrapper" class="ro.zg.netcell.entities.ExceptionHandlingWrapper">
+	<resource id="CasInterpreterWrapper" class="net.segoia.netcell.entities.ExceptionHandlingWrapper">
 		<property name="exceptionHandler" value-ref="OuterBorderExceptionHandler"></property>
 		<property name="wrappedEntity" value-ref="CasCommandInterpreter"></property>
 	</resource>

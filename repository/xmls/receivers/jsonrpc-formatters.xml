@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    netcell-node - A basic netcell node configuration
+    Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
 <resources>
    <resource id="JsonResponseFormatter"
-      class="ro.zg.netcell.control.commands.formatters.AbstractObjectFormatter"
+      class="net.segoia.netcell.control.commands.formatters.AbstractObjectFormatter"
       init-method="init">
       <property name="formatters">
          <value>
@@ -37,32 +55,32 @@
       <property name="defaultFormatter" value-ref="jsonreflectiveFormatter"></property>
    </resource>
    <resource id="jsonreflectiveFormatter"
-      class="ro.zg.netcell.control.commands.formatters.ReflectiveFormatter"></resource>
+      class="net.segoia.netcell.control.commands.formatters.ReflectiveFormatter"></resource>
       
    <resource id="JsonGenericNameValueFormatter"
-      class="ro.zg.netcell.control.commands.formatters.GenericNameValueFormatter">
+      class="net.segoia.netcell.control.commands.formatters.GenericNameValueFormatter">
       <property name="associationEelement" value=":"></property>
    </resource>
    <resource id="JsonCollectionFormatter"
-      class="ro.zg.netcell.control.commands.formatters.CollectionFormatter">
+      class="net.segoia.netcell.control.commands.formatters.CollectionFormatter">
       <property name="startElement" value="["></property>
       <property name="endElement" value="]"></property>
    </resource>
    <resource id="JsonMapFormatter"
-      class="ro.zg.netcell.control.commands.formatters.MapFormatter">
+      class="net.segoia.netcell.control.commands.formatters.MapFormatter">
       <property name="startElement" value="{"></property>
       <property name="endElement" value="}"></property>
       <property name="associationEelement" value=":"></property>
    </resource>
-   <resource id="JsonGenericNameValueContextFormatter" class="ro.zg.netcell.control.commands.formatters.GenericNameValueContextFormatter">
+   <resource id="JsonGenericNameValueContextFormatter" class="net.segoia.netcell.control.commands.formatters.GenericNameValueContextFormatter">
       <property name="startElement" value="{"></property>
       <property name="endElement" value="}"></property>
    </resource>
-    <resource id="JsonGenericNameValueListFormatter" class="ro.zg.netcell.control.commands.formatters.GenericNameValueListFormatter">
+    <resource id="JsonGenericNameValueListFormatter" class="net.segoia.netcell.control.commands.formatters.GenericNameValueListFormatter">
       <property name="startElement" value="["></property>
       <property name="endElement" value="]"></property>
    </resource>
-   <resource id="JsonStringFormatter" class="ro.zg.netcell.control.commands.formatters.StringFormatter">
+   <resource id="JsonStringFormatter" class="net.segoia.netcell.control.commands.formatters.StringFormatter">
       <property name="stringDelimiter" value="&quot;"></property>
    </resource>
 </resources>

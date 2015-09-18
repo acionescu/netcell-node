@@ -2,23 +2,23 @@
 <!DOCTYPE configuration SYSTEM "../../dtds/entry-point.dtd">
 <configuration>
 	<cfg-handler id="valueCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.ValueConfigurationHandler" />
+		class="net.segoia.cfgengine.core.configuration.handlers.ValueConfigurationHandler" />
 	<cfg-handler id="defaultCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
 	</cfg-handler>
 	<cfg-handler id="simpleCustomCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
 		<property name="hasIdAttribute" value="false"></property>
 	</cfg-handler>
 	<cfg-handler id="entityRefCfgHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.DependencyConfigurationHandler">
+	class="net.segoia.cfgengine.core.configuration.handlers.DependencyConfigurationHandler">
 			<property name="hasIdAttribute" value="false"></property>
 			<property name="referenceAttributeName" value="ref-id"></property>
 	</cfg-handler>
 <!-- config wrapper start -->
 <cfg-handler id="configHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+	class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 	<property name="hasIdAttribute" value="false"/>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -31,8 +31,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="wrapperConfigHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+	class="net.segoia.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"/>
 		<property name="typeAttributeName" value="logic-type"/>
 		<property name="typesToProperties">
@@ -49,8 +49,8 @@
 	
 <!-- pipeline start -->
 <cfg-handler id="pipelineHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+	class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 	<property name="hasIdAttribute" value="false"/>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -63,8 +63,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="pipelineWrapperConfigurationHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+	class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"/>
 		<property name="defaultReferencesForProperties">
 			<value>
@@ -86,8 +86,8 @@
 
 
 	<cfg-handler id="pipelineConfigurationHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionPipeLineConfiguration">
+	class="net.segoia.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionPipeLineConfiguration">
 		<property name="hasIdAttribute" value="false"/>
 		<property name="typeAttributeName" value="logic-type"/>
 		<property name="typesToProperties">
@@ -102,8 +102,8 @@
 	
 <!-- preparator-inspector start -->	
 <cfg-handler id="preparatorInspectorHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+	class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 	<property name="hasIdAttribute" value="false"/>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -116,8 +116,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="preparatorInspectorWrapperConfigurationHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+	class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"/>
 		<property name="defaultReferencesForProperties">
 			<value>
@@ -139,8 +139,8 @@
 
 
 	<cfg-handler id="preparatorInspectorConfigurationHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
-	default-class="ro.zg.util.execution.test.func.PreparatorInspectorEntityConfiguration">
+	class="net.segoia.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
+	default-class="net.segoia.util.execution.test.func.PreparatorInspectorEntityConfiguration">
 		<property name="hasIdAttribute" value="false"/>
 		<property name="typeAttributeName" value="logic-type"/>
 		<property name="typesToProperties">
@@ -156,8 +156,8 @@
 <!-- preparator-inspector stop -->	
 <!-- left join start -->	
 	<cfg-handler id="leftJoinHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+	class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 	<property name="hasIdAttribute" value="false"/>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -171,8 +171,8 @@
 	</cfg-handler>
 	
 	<cfg-handler id="leftJoinConfigHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+	class="net.segoia.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"/>
 		<property name="typeAttributeName" value="logic-type"/>
 		<property name="defaultReferencesForProperties">
@@ -194,8 +194,8 @@
 
 <!-- right join start -->
 	<cfg-handler id="rightJoinHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+	class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 	<property name="hasIdAttribute" value="false"/>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -209,8 +209,8 @@
 	</cfg-handler>
 	
 	<cfg-handler id="rightJoinConfigHandler"
-	class="ro.zg.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
-	default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+	class="net.segoia.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
+	default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"/>
 		<property name="typeAttributeName" value="logic-type"/>
 		<property name="defaultReferencesForProperties">
@@ -233,10 +233,10 @@
 <!--workflow pipeline: start -->
 <!--	<cfg-handler id="workFlowPipeLineConfiguration"-->
 	<!--
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
 	-->
 	<!--
-		default-class="ro.zg.synapse.engine.listeners.util.WorkFlowLoggingListener">
+		default-class="net.segoia.synapse.engine.listeners.util.WorkFlowLoggingListener">
 	-->
 <!--		<property name="hasIdAttribute" value="false"></property>-->
 <!--		<property name="tagsToProperties">-->
@@ -256,8 +256,8 @@
 
 <!-- component pipeline: start -->
 	<cfg-handler id="componentPipelineWrapperHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 <!--		<property name="hasIdAttribute" value="false"></property>-->
 		<property name="alwaysUseDefaultClass" value="true"></property>
 		<property name="wrappedPropertiesHandlers">
@@ -271,8 +271,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="componentPipelineWrapperConfigurationHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="alwaysUseDefaultClass" value="true"></property>
 		<property name="defaultReferencesForProperties">
@@ -294,8 +294,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="componentPipelineConfigurationHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionPipeLineConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionPipeLineConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="tagsToProperties">
 			<value>
@@ -319,8 +319,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="componentWrapperHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="alwaysUseDefaultClass" value="true"></property>
 <!--		<property name="attributesToProperties">-->
@@ -341,8 +341,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="componentWrapperConfigurationHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="alwaysUseDefaultClass" value="true"></property>
 		<property name="wrappedPropertiesHandlers">
@@ -375,8 +375,8 @@
 	
 <!-- input parameters processor: start -->
 	<cfg-handler id="inputParamsProcessorWrapperHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -389,8 +389,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="inputParamsProcessorWrapperCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultReferencesForProperties">
 			<value>
@@ -410,8 +410,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="inputParamsProcessorConfigHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.netcell.engine.core.InputParameterProcessorConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.netcell.engine.core.InputParameterProcessorConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="tagsToProperties">
 			<value>
@@ -431,8 +431,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowInputParameterCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.synapse.engine.vo.WorkFlowInputParameter">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.synapse.engine.vo.WorkFlowInputParameter">
 		<property name="hasIdAttribute" value="false"></property>
 <!--		<property name="defaultInitMethod" value="init"></property>-->
 		<property name="attributesToProperties">
@@ -467,8 +467,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="workFlowParameterCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.data.GenericNameValue">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.data.GenericNameValue">
 		<property name="hasIdAttribute" value="false"></property>
 <!--		<property name="defaultInitMethod" value="init"></property>-->
 		<property name="attributesToProperties">
@@ -493,8 +493,8 @@
 <!-- workflow : start -->
 <!-- dynamic params : start -->
 	<cfg-handler id="dynamicParamsHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -507,8 +507,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="dynamicParametersCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultReferencesForProperties">
 			<value>
@@ -537,8 +537,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="dynamicParamsPreparatorInspectorCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.func.PreparatorInspectorEntityConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.func.PreparatorInspectorEntityConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -559,8 +559,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="dynamicParamsWrapperHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -573,8 +573,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="dynamicParametersMapperWrapperCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultReferencesForProperties">
 			<value>
@@ -594,8 +594,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="wfCompDynamicParamsMapperConfigurationHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.netcell.engine.core.DynamicParametersMapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.netcell.engine.core.DynamicParametersMapperConfiguration">
 		<property name="hasIdAttribute" value="false" />
 		<property name="defaultInitMethod" value="init"></property>
 		<property name="defaultMapImplementation" value="java.util.Hashtable"></property>
@@ -617,8 +617,8 @@
 	
 <!-- static params : start -->
 	<cfg-handler id="staticParamsHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -631,8 +631,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="staticParamsMapperWrapperCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultReferencesForProperties">
 			<value>
@@ -652,8 +652,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="staticParamsMapperConfigHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.netcell.engine.core.StaticParametersMapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.netcell.engine.core.StaticParametersMapperConfiguration">
 		<property name="hasIdAttribute" value="false" />
 		<property name="tagsToProperties">
 			<value>
@@ -674,8 +674,8 @@
 
 <!-- wfcomp execution pipeline : start -->
 	<cfg-handler id="wfCompInputHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -697,8 +697,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="wfCompInputPipelineWrapperConfig"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultReferencesForProperties">
 			<value>
@@ -727,8 +727,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="wfCompInputPipelineConfig"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionPipeLineConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionPipeLineConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="tagsToProperties">
 			<value>
@@ -759,8 +759,8 @@
 
 <!-- workflow component : start -->
 <cfg-handler id="wfCompHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapper">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -773,8 +773,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="wfCompCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.ExecutionEntityWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.ExecutionEntityWrapperConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="defaultReferencesForProperties">
 			<value>
@@ -794,8 +794,8 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="wfCompPreparatorInspectorCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-		default-class="ro.zg.util.execution.test.func.PreparatorInspectorEntityConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+		default-class="net.segoia.util.execution.test.func.PreparatorInspectorEntityConfiguration">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="wrappedPropertiesHandlers">
 			<value>
@@ -818,7 +818,7 @@
 <!-- workflow component : stop -->
 <!-- workflow : end -->
 	<cfg-handler id="entityHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
 		<property name="hasIdAttribute" value="false" />
 		<property name="typeAttributeName" value="type"></property>
 		<property name="localConfigurationHandlers">
@@ -845,7 +845,7 @@
 	</cfg-handler>
 	
 	<cfg-handler id="entityTypeResolveHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
 		<property name="hasIdAttribute" value="false" />
 		<property name="typeAttributeName" value="type"></property>
 		<property name="localConfigurationHandlers">
@@ -869,7 +869,7 @@
 	</cfg-handler>
 	
 	<cfg-handler id="logicTypeHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
 		<property name="hasIdAttribute" value="false" />
 		<property name="typeAttributeName" value="logic-type"></property>
 		<property name="fallBackHandler" value-ref="entityTypeResolveHandler"></property>
@@ -898,7 +898,7 @@
 	</cfg-handler>
 	
 	<cfg-handler id="rootHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
 		<property name="localConfigurationHandlers">
 			<value>
 				<map>

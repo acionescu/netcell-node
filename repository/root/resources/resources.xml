@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    netcell-node - A basic netcell node configuration
+    Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
 <resources>
-   <resource id="inputParamsProcessor" class="ro.zg.netcell.entities.InputParamsProcessor" />
-   <resource id="copyContext" class="ro.zg.netcell.entities.CopyContextEntity"></resource>
-   <resource id="localParamsProcessor" class="ro.zg.netcell.entities.LocalParamsProcessor"></resource>
-   <resource id="methodCaller" class="ro.zg.netcell.entities.MethodCaller" />
-   <resource id="flowCaller" class="ro.zg.netcell.entities.FlowCallerEntity"></resource>
-   <resource id="defineParameterRes" class="ro.zg.netcell.entities.DefineParameterEntity"></resource>
-   <resource id="pipeLine" class="ro.zg.netcell.entities.ExecutionPipeLine"></resource>
+   <resource id="inputParamsProcessor" class="net.segoia.netcell.entities.InputParamsProcessor" />
+   <resource id="copyContext" class="net.segoia.netcell.entities.CopyContextEntity"></resource>
+   <resource id="localParamsProcessor" class="net.segoia.netcell.entities.LocalParamsProcessor"></resource>
+   <resource id="methodCaller" class="net.segoia.netcell.entities.MethodCaller" />
+   <resource id="flowCaller" class="net.segoia.netcell.entities.FlowCallerEntity"></resource>
+   <resource id="defineParameterRes" class="net.segoia.netcell.entities.DefineParameterEntity"></resource>
+   <resource id="pipeLine" class="net.segoia.netcell.entities.ExecutionPipeLine"></resource>
    <resource id="preparatorInspector"
-      class="ro.zg.netcell.entities.PreparatorInspectorEntity"></resource>
-   <resource id="dynamicExecutor" class="ro.zg.netcell.entities.DynamicExecutor"></resource>
-   <resource id="workFlow" class="ro.zg.netcell.entities.WorkFlow">
+      class="net.segoia.netcell.entities.PreparatorInspectorEntity"></resource>
+   <resource id="dynamicExecutor" class="net.segoia.netcell.entities.DynamicExecutor"></resource>
+   <resource id="workFlow" class="net.segoia.netcell.entities.WorkFlow">
    </resource>
-   <resource id="workflowAdapter" class="ro.zg.netcell.entities.WorkFlowWrapper"></resource>
-   <resource id="outputParamsProcessor" class="ro.zg.netcell.entities.OutputParamsProcessor"></resource>
-   <resource id="publicEntity" class="ro.zg.netcell.entities.PublicEntity">
+   <resource id="workflowAdapter" class="net.segoia.netcell.entities.WorkFlowWrapper"></resource>
+   <resource id="outputParamsProcessor" class="net.segoia.netcell.entities.OutputParamsProcessor"></resource>
+   <resource id="publicEntity" class="net.segoia.netcell.entities.PublicEntity">
       <property name="inputParamsProcessor" value-ref="inputParamsProcessor"></property>
    </resource>
-   <resource id="expressionEvaluatorRes" class="ro.zg.util.expression.ExpressionEvaluator"></resource>
-   <resource id="calculatorRes" class="ro.zg.util.calculator.SimpleCalculator"></resource>
+   <resource id="expressionEvaluatorRes" class="net.segoia.util.expression.ExpressionEvaluator"></resource>
+   <resource id="calculatorRes" class="net.segoia.util.calculator.SimpleCalculator"></resource>
    <resource id="getCollectionSize"
-      class="ro.zg.netcell.entities.util.collections.GetCollectionSizeEntity" />
+      class="net.segoia.netcell.entities.util.collections.GetCollectionSizeEntity" />
    <resource id="getValueFromList"
-      class="ro.zg.netcell.entities.util.collections.GetValueFromList" />
+      class="net.segoia.netcell.entities.util.collections.GetValueFromList" />
    <resource id="appendToList"
-      class="ro.zg.netcell.entities.util.collections.AppendToList"></resource>
+      class="net.segoia.netcell.entities.util.collections.AppendToList"></resource>
    <resource id="concatenateTwoLists"
-      class="ro.zg.netcell.entities.util.collections.ConcatenateTwoLists"></resource>
-   <resource id="dataAccessEntity" class="ro.zg.netcell.entities.data.DataAccessEntity"></resource>
-   <resource id="uriResolver" class="ro.zg.util.net.resources.URIResolver"></resource>
-   <resource id="logicHelper" class="ro.zg.netcell.entities.core.LogicHelper"></resource>
-   <resource id="parseManager" class="ro.zg.util.parser.ParseManager"></resource>
-   <resource id="parserEntity" class="ro.zg.netcell.entities.util.ParserEntity">
+      class="net.segoia.netcell.entities.util.collections.ConcatenateTwoLists"></resource>
+   <resource id="dataAccessEntity" class="net.segoia.netcell.entities.data.DataAccessEntity"></resource>
+   <resource id="uriResolver" class="net.segoia.util.net.resources.URIResolver"></resource>
+   <resource id="logicHelper" class="net.segoia.netcell.entities.core.LogicHelper"></resource>
+   <resource id="parseManager" class="net.segoia.util.parser.ParseManager"></resource>
+   <resource id="parserEntity" class="net.segoia.netcell.entities.util.ParserEntity">
       <property name="parseManager" value-ref="parseManager"></property>
    </resource>
-   <resource id="messageDigester" class="ro.zg.netcell.entities.util.DigesterEntity"></resource>
+   <resource id="messageDigester" class="net.segoia.netcell.entities.util.DigesterEntity"></resource>
 </resources>

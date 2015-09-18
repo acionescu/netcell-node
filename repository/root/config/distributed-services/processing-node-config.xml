@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    netcell-node - A basic netcell node configuration
+    Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <!DOCTYPE resources SYSTEM "../../../dtds/resources.dtd">
 <resources>
    <resource id="mainNodeConfiguration"
-      class="ro.zg.distributed.framework.cfg.ProcessingNodeConfiguration">
+      class="net.segoia.distributed.framework.cfg.ProcessingNodeConfiguration">
       <!-- <property name="groupName" value="NETCELL_SERVICES_TEST"></property> -->
       <property name="servicesConfiguration">
          <value>
             <list>
                <value>
                   <resource id="ENTITIES_MANAGER"
-                     class="ro.zg.distributed.framework.cfg.DistributedServiceConfiguration">
+                     class="net.segoia.distributed.framework.cfg.DistributedServiceConfiguration">
                      <property name="name" value="ENTITIES_MANAGER"></property>
                      <property name="description"
                         value="Manages the netcell entities"></property>
                      <!-- <property name="className" -->
-                     <!-- value="ro.zg.netcell.distributed.EntitiesManagerDistributedService"></property> -->
+                     <!-- value="net.segoia.netcell.distributed.EntitiesManagerDistributedService"></property> -->
                      <property name="instance" value-ref="entitiesManagerDs"></property>
                      <property name="mandatory" value="true"></property>
                      <property name="maxNumberOfInstancesPerGroup"
@@ -23,7 +41,7 @@
                </value>
                <value>
                   <resource id="EXECUTION_ENGINE"
-                     class="ro.zg.distributed.framework.cfg.DistributedServiceConfiguration">
+                     class="net.segoia.distributed.framework.cfg.DistributedServiceConfiguration">
                      <property name="name" value="EXECUTION_ENGINE"></property>
                      <property name="description" value="Executes flows"></property>
                      <property name="instance" value-ref="executionEngineDs"></property>
@@ -32,12 +50,12 @@
                         value="20000"></property>
                      <!-- <property name="runtimeServiceConfig"> -->
                      <!-- <value> -->
-                     <!-- <resource id="engineRuntimeConfig" class="ro.zg.distributed.framework.cfg.RuntimeServiceConfiguration"> -->
+                     <!-- <resource id="engineRuntimeConfig" class="net.segoia.distributed.framework.cfg.RuntimeServiceConfiguration"> -->
                      <!-- <property name="propertiesConfig"> -->
                      <!-- <value> -->
                      <!-- <list> -->
                      <!-- <value> -->
-                     <!-- <resource id="engineEntitiesProp" class="ro.zg.distributed.framework.cfg.ServicePropertyConfig"> -->
+                     <!-- <resource id="engineEntitiesProp" class="net.segoia.distributed.framework.cfg.ServicePropertyConfig"> -->
                      <!-- <property name="propertyName" value="entities"></property> -->
                      <!-- <property name="sourceServiceName" value="ENTITIES_MANAGER"></property> -->
                      <!-- <property name="methodName" value="getExecutableEntities"></property> -->
@@ -53,7 +71,7 @@
                </value>
                <value>
                   <resource id="MONITORING_MANAGER"
-                     class="ro.zg.distributed.framework.cfg.DistributedServiceConfiguration">
+                     class="net.segoia.distributed.framework.cfg.DistributedServiceConfiguration">
                      <property name="name" value="MONITORING_MANAGER"></property>
                      <property name="description" value="Monitors activity"></property>
                      <property name="instance" value-ref="monitoringManagerDs"></property>
@@ -64,7 +82,7 @@
                </value>
                <value>
                   <resource id="SCHEDULER"
-                     class="ro.zg.distributed.framework.cfg.DistributedServiceConfiguration">
+                     class="net.segoia.distributed.framework.cfg.DistributedServiceConfiguration">
                      <property name="name" value="SCHEDULER"></property>
                      <property name="description" value="Schedules job execution"></property>
                      <property name="instance" value-ref="scheduledJobsManagerDs"></property>
@@ -79,7 +97,7 @@
    </resource>
    <!-- distributed services -->
    <resource id="entitiesManagerDs"
-      class="ro.zg.distributed.framework.ReflectionBasedDistributedService">
+      class="net.segoia.distributed.framework.ReflectionBasedDistributedService">
       <property name="targetObject" value-ref="entitiesManager"></property>
       <property name="argumentsForMethods">
          <value>
@@ -87,7 +105,7 @@
                <entry key="createEntity.1">
                   <value>
                      <list>
-                        <value>ro.zg.netcell.vo.definitions.EntityDefinition
+                        <value>net.segoia.netcell.vo.definitions.EntityDefinition
                         </value>
                      </list>
                   </value>
@@ -95,7 +113,7 @@
                <entry key="updateEntity.1">
                   <value>
                      <list>
-                        <value>ro.zg.netcell.vo.definitions.EntityDefinition
+                        <value>net.segoia.netcell.vo.definitions.EntityDefinition
                         </value>
                      </list>
                   </value>
@@ -103,7 +121,7 @@
                <entry key="removeEntity.1">
                   <value>
                      <list>
-                        <value>ro.zg.netcell.vo.definitions.EntityDefinition
+                        <value>net.segoia.netcell.vo.definitions.EntityDefinition
                         </value>
                      </list>
                   </value>
@@ -113,7 +131,7 @@
       </property>
    </resource>
    <resource id="executionEngineDs"
-      class="ro.zg.distributed.framework.ReflectionBasedDistributedService">
+      class="net.segoia.distributed.framework.ReflectionBasedDistributedService">
       <property name="targetObject" value-ref="executionEngineController"></property>
       <property name="argumentsForMethods">
          <value>
@@ -121,7 +139,7 @@
                <entry key="execute.1">
                   <value>
                      <list>
-                        <value>ro.zg.util.data.GenericNameValueContext
+                        <value>net.segoia.util.data.GenericNameValueContext
                         </value>
                      </list>
                   </value>
@@ -130,17 +148,17 @@
          </value>
       </property>
    </resource>
-   <!-- <resource id="executionEngineDs" class="ro.zg.netcell.distributed.ExecutionEngineDS"> -->
+   <!-- <resource id="executionEngineDs" class="net.segoia.netcell.distributed.ExecutionEngineDS"> -->
    <!-- <property name="engine" value-ref="executionEngineController"></property> -->
    <!-- </resource> -->
    <resource id="monitoringManagerDs"
-      class="ro.zg.distributed.framework.ReflectionBasedDistributedService">
+      class="net.segoia.distributed.framework.ReflectionBasedDistributedService">
       <property name="targetObject" value-ref="monitoringManager"></property>
       <property name="setResourceLoaderOnStart" value="false"></property>
       <property name="callInitOnStart" value="false"></property>
    </resource>
    <resource id="scheduledJobsManagerDs"
-      class="ro.zg.distributed.framework.ReflectionBasedDistributedService">
+      class="net.segoia.distributed.framework.ReflectionBasedDistributedService">
       <property name="targetObject" value-ref="scheduledJobsManager"></property>
       <!-- init is called by the entities manager -->
       <property name="callInitOnStart" value="false"></property>

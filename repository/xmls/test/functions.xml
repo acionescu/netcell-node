@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    netcell-node - A basic netcell node configuration
+    Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
 
 <resources>
 <!--	-->
 	<!--  -->
-	<resource id="inputParametersProcessor" class="ro.zg.netcell.engine.core.InputParametersProcessor"></resource>
+	<resource id="inputParametersProcessor" class="net.segoia.netcell.engine.core.InputParametersProcessor"></resource>
 	
-	<resource id="executionPipeline" class="ro.zg.util.execution.test.ExecutionPipeLine"></resource>
+	<resource id="executionPipeline" class="net.segoia.util.execution.test.ExecutionPipeLine"></resource>
 	
-	<resource id="dynamicConfigurator" class="ro.zg.util.execution.test.func.DynamicConfiguratorEntity"></resource>
+	<resource id="dynamicConfigurator" class="net.segoia.util.execution.test.func.DynamicConfiguratorEntity"></resource>
 	
-	<resource id="workFlowContextPairCreator" class="ro.zg.netcell.engine.core.WorkFlowContextPairCreator"></resource>
+	<resource id="workFlowContextPairCreator" class="net.segoia.netcell.engine.core.WorkFlowContextPairCreator"></resource>
 	
-	<resource id="staticParametersMapper" class="ro.zg.netcell.engine.core.StaticParametersMapper"></resource>
+	<resource id="staticParametersMapper" class="net.segoia.netcell.engine.core.StaticParametersMapper"></resource>
 	
-	<resource id="dynamicParametersMapper" class="ro.zg.netcell.engine.core.DynamicParametersMapper"></resource>
+	<resource id="dynamicParametersMapper" class="net.segoia.netcell.engine.core.DynamicParametersMapper"></resource>
 </resources>

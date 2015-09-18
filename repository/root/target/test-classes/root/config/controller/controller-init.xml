@@ -2,20 +2,20 @@
 <!DOCTYPE resources SYSTEM "../../../dtds/workflow-engine.dtd">
 <resources>
    
-   <resource id="distributedServicesManager" class="ro.zg.netcell.control.DistributedServicesManager">
+   <resource id="distributedServicesManager" class="net.segoia.netcell.control.DistributedServicesManager">
       <property name="entitiesManager">
          <value>
-            <resource id="entitiesManager" class="ro.zg.netcell.distributed.EntitiesManagerProxy"></resource>
+            <resource id="entitiesManager" class="net.segoia.netcell.distributed.EntitiesManagerProxy"></resource>
          </value>
       </property>
       <property name="executionEngine">
          <value>
-            <resource id="executionEngine" class="ro.zg.netcell.distributed.ExecutionEngineProxy"></resource>
+            <resource id="executionEngine" class="net.segoia.netcell.distributed.ExecutionEngineProxy"></resource>
          </value>
       </property>
       <property name="monitoringManager">
          <value>
-            <resource id="monitoringManager" class="ro.zg.netcell.distributed.MonitoringManagerProxy"></resource>
+            <resource id="monitoringManager" class="net.segoia.netcell.distributed.MonitoringManagerProxy"></resource>
          </value>
       </property>
       <property name="repositoryDir" value="file:///media/disk/work/projects/netcell/repository/"></property>
@@ -23,18 +23,18 @@
    </resource>
   
    <resource id="netCellControllerConfiguration"
-      class="ro.zg.netcell.control.NetCellControllerConfiguration">
+      class="net.segoia.netcell.control.NetCellControllerConfiguration">
       <property name="servicesManager" value-ref="distributedServicesManager"></property>
    </resource>
-   <resource id="NetCellController" class="ro.zg.netcell.control.NetCellController">
+   <resource id="NetCellController" class="net.segoia.netcell.control.NetCellController">
       <property name="config" value-ref="netCellControllerConfiguration"></property>
    </resource>
    <resource id="CommandControllerWrapper"
-      class="ro.zg.netcell.control.CommandControllerWrapper">
+      class="net.segoia.netcell.control.CommandControllerWrapper">
       <property name="wrappedExecutionEntity" value-ref="CommandController"></property>
       <property name="exceptionHandler" value-ref="BorderExceptionHandler"></property>
    </resource>
-   <resource id="CommandController" class="ro.zg.netcell.control.CommandController">
+   <resource id="CommandController" class="net.segoia.netcell.control.CommandController">
       <property name="commandExecutors">
          <value>
             <map>
@@ -60,22 +60,22 @@
          </value>
       </property>
    </resource>
-   <resource id="getDefinitionsCommand" class="ro.zg.netcell.control.commands.GetDefinitions">
+   <resource id="getDefinitionsCommand" class="net.segoia.netcell.control.commands.GetDefinitions">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="executeEntityCommand" class="ro.zg.netcell.control.commands.ExecuteEntity">
+   <resource id="executeEntityCommand" class="net.segoia.netcell.control.commands.ExecuteEntity">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="createEntityCommand" class="ro.zg.netcell.control.commands.CreateEntity">
+   <resource id="createEntityCommand" class="net.segoia.netcell.control.commands.CreateEntity">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="updateEntityCommand" class="ro.zg.netcell.control.commands.UpdateEntity">
+   <resource id="updateEntityCommand" class="net.segoia.netcell.control.commands.UpdateEntity">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="getDefinitionTypes" class="ro.zg.netcell.control.commands.GetDefinitionTypes">
+   <resource id="getDefinitionTypes" class="net.segoia.netcell.control.commands.GetDefinitionTypes">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="removeEntityCommand" class="ro.zg.netcell.control.commands.RemoveEntity">
+   <resource id="removeEntityCommand" class="net.segoia.netcell.control.commands.RemoveEntity">
        <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
 </resources>

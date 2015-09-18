@@ -1,40 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    netcell-node - A basic netcell node configuration
+    Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <!DOCTYPE configuration SYSTEM "../../../dtds/entry-point.dtd">
 <configuration>
    <cfg-handler id="entityRefCfgHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.DependencyConfigurationHandler">
+      class="net.segoia.cfgengine.core.configuration.handlers.DependencyConfigurationHandler">
       <property name="hasIdAttribute" value="false"></property>
       <property name="referenceAttributeName" value="ref-id"></property>
    </cfg-handler>
     <cfg-handler id="databaseConnectionManagerHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.netcell.connectors.DatabaseConnectionManager">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.netcell.connectors.DatabaseConnectionManager">
       <property name="hasIdAttribute" value="false" />
       <property name="defaultInitMethod" value="init"></property>
    </cfg-handler>
    <cfg-handler id="httpConnectionManagerHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.netcell.connectors.HttpConnectionManager">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.netcell.connectors.HttpConnectionManager">
       <property name="hasIdAttribute" value="false" />
       <property name="defaultInitMethod" value="init"></property>
    </cfg-handler>
    
     <cfg-handler id="cassandraConnectionManagerHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.netcell.connectors.CassandraConnectionManager">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.netcell.connectors.CassandraConnectionManager">
       <property name="hasIdAttribute" value="false" />
       <property name="defaultInitMethod" value="init"></property>
    </cfg-handler>
    
    <cfg-handler id="netcellConnectionManagerHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.netcell.connectors.NetcellConnectionManager">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.netcell.connectors.NetcellConnectionManager">
       <property name="hasIdAttribute" value="false" />
       <property name="defaultInitMethod" value="init"></property>
    </cfg-handler>
    
    <cfg-handler id="connectionManagerHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
+      class="net.segoia.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
       <property name="hasIdAttribute" value="false" />
       <property name="typeAttributeName" value="logic-type"></property>
       <property name="localConfigurationHandlers">
@@ -58,38 +76,38 @@
    </cfg-handler>
    
    <cfg-handler id="datasourceDefinitionCfgHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.netcell.vo.definitions.DataSourceDefinition">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.netcell.vo.definitions.DataSourceDefinition">
       <property name="hasIdAttribute" value="true" />
    </cfg-handler>
    
     <cfg-handler id="userInputCfgHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.util.data.UserInputParameter">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.util.data.UserInputParameter">
       <property name="hasIdAttribute" value="false" />
    </cfg-handler>
    
     <cfg-handler id="dynamicParamCfgHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.util.data.DynamicConfigParameter">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.util.data.DynamicConfigParameter">
       <property name="hasIdAttribute" value="false" />
    </cfg-handler>
    
     <cfg-handler id="staticParamCfgHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.util.data.GenericNameValue">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.util.data.GenericNameValue">
       <property name="hasIdAttribute" value="false" />
    </cfg-handler>
    
    <cfg-handler id="configDataHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.util.data.ConfigurationData">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.util.data.ConfigurationData">
       <property name="hasIdAttribute" value="false" />
    </cfg-handler>
    
    <cfg-handler id="commandManagerHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
-      default-class="ro.zg.scriptdao.core.DefaultCommandManager">
+      class="net.segoia.cfgengine.core.configuration.handlers.CustomConfigurationHandler"
+      default-class="net.segoia.scriptdao.core.DefaultCommandManager">
       <property name="hasIdAttribute" value="false" />
       <property name="defaultInitMethod" value="init"></property>
       <property name="resourcesLoaderPropertyName" value="resourcesLoader"></property>
@@ -103,13 +121,13 @@
    </cfg-handler>
    
    <cfg-handler id="classpathCommandLoaderHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-      default-class="ro.zg.scriptdao.core.ClasspathCommandLoader">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+      default-class="net.segoia.scriptdao.core.ClasspathCommandLoader">
       <property name="hasIdAttribute" value="false" />
    </cfg-handler>
    
    <cfg-handler id="resourceLoaderHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
+      class="net.segoia.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
       <property name="hasIdAttribute" value="false" />
       <property name="typeAttributeName" value="logic-type"></property>
       <property name="localConfigurationHandlers">
@@ -124,7 +142,7 @@
    </cfg-handler>
    
      <cfg-handler id="entityTypeResolveHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
+      class="net.segoia.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
       <property name="hasIdAttribute" value="false" />
       <property name="typeAttributeName" value="type"></property>
       <property name="localConfigurationHandlers">
@@ -160,8 +178,8 @@
    </cfg-handler>
    
     <cfg-handler id="dynamicExecutionEntityHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
-      default-class="ro.zg.netcell.entities.DynamicEntityWrapper">
+      class="net.segoia.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
+      default-class="net.segoia.netcell.entities.DynamicEntityWrapper">
       <property name="hasIdAttribute" value="false" />
       <property name="typeAttributeName" value="logic-type" />
       <property name="typesToProperties">
@@ -183,8 +201,8 @@
    </cfg-handler>
   
    <cfg-handler id="dynamicExecutionEntityConfigHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
-      default-class="ro.zg.netcell.entities.DynamicEntityWrapperConfiguration">
+      class="net.segoia.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
+      default-class="net.segoia.netcell.entities.DynamicEntityWrapperConfiguration">
       <property name="hasIdAttribute" value="false" />
       <property name="defaultInitMethod" value="init"></property>
       <property name="typeAttributeName" value="logic-type" />
@@ -210,7 +228,7 @@
    
    
    <cfg-handler id="logicTypeHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
+      class="net.segoia.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
       <property name="hasIdAttribute" value="false" />
       <property name="typeAttributeName" value="logic-type"></property>
       <property name="fallBackHandler" value-ref="entityTypeResolveHandler"></property>
@@ -225,7 +243,7 @@
       </property>
    </cfg-handler>
    <cfg-handler id="rootHandler"
-      class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
+      class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
       <property name="localConfigurationHandlers">
          <value>
             <map>

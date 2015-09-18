@@ -2,17 +2,17 @@
 <!DOCTYPE configuration SYSTEM "../../dtds/entry-point.dtd">
 <configuration>
 	<cfg-handler id="entityRefCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.DependencyConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.DependencyConfigurationHandler">
 		<property name="hasIdAttribute" value="false"></property>
 		<property name="referenceAttributeName" value="ref-id"></property>
 	</cfg-handler>
 	<cfg-handler id="simpleCustomCfgHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
 		<property name="hasIdAttribute" value="false"></property>
 	</cfg-handler>
 	<cfg-handler id="dynamicExecutionEntityHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
-		default-class="ro.zg.util.execution.test.DynamicExecutionWrapper">
+		class="net.segoia.cfgengine.core.configuration.handlers.TypeDecoratorConfigurationHandler"
+		default-class="net.segoia.util.execution.test.DynamicExecutionWrapper">
 		<property name="hasIdAttribute" value="false" />
 		<property name="typeAttributeName" value="logic-type" />
 		<property name="typesToProperties">
@@ -33,15 +33,15 @@
 		</property>
 	</cfg-handler>
 	<cfg-handler id="dynamicExecutionEntityConfigHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
-		default-class="ro.zg.util.execution.test.DynamicExecutionWrapperConfiguration">
+		class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler"
+		default-class="net.segoia.util.execution.test.DynamicExecutionWrapperConfiguration">
 		<property name="hasIdAttribute" value="false" />
 		<property name="defaultInitMethod" value="init"></property>
 	</cfg-handler>
 	
 	
 		<cfg-handler id="logicTypeHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.TypeConfigurationHandler">
 		<property name="hasIdAttribute" value="false" />
 		<property name="typeAttributeName" value="logic-type"></property>
 		<property name="localConfigurationHandlers">
@@ -71,7 +71,7 @@
 	</cfg-handler>
 	
 	<cfg-handler id="rootHandler"
-		class="ro.zg.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
+		class="net.segoia.cfgengine.core.configuration.handlers.BaseConfigurationHandler">
 		<property name="localConfigurationHandlers">
 			<value>
 				<map>

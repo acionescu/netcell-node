@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    netcell-node - A basic netcell node configuration
+    Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <!DOCTYPE resources SYSTEM "../../../dtds/workflow-engine.dtd">
 <resources>
    <resource id="distributedServicesManager" init-method="init"
-      class="ro.zg.netcell.control.DistributedServicesManager">
+      class="net.segoia.netcell.control.DistributedServicesManager">
       <property name="entitiesManager">
          <value>
             <resource id="entitiesManager"
-               class="ro.zg.netcell.distributed.EntitiesManagerProxy"></resource>
+               class="net.segoia.netcell.distributed.EntitiesManagerProxy"></resource>
          </value>
       </property>
       <property name="executionEngine">
          <value>
             <resource id="executionEngine"
-               class="ro.zg.netcell.distributed.ExecutionEngineProxy"></resource>
+               class="net.segoia.netcell.distributed.ExecutionEngineProxy"></resource>
          </value>
       </property>
       <property name="monitoringManager">
          <value>
             <resource id="monitoringManager"
-               class="ro.zg.netcell.distributed.MonitoringManagerProxy">
+               class="net.segoia.netcell.distributed.MonitoringManagerProxy">
             </resource>
          </value>
       </property>
@@ -29,22 +47,22 @@
          value="root/config/distributed-services/distributed-services-config.xml"></property>
    </resource>
    <resource id="netCellControllerConfiguration"
-      class="ro.zg.netcell.control.NetCellControllerConfiguration">
+      class="net.segoia.netcell.control.NetCellControllerConfiguration">
       <property name="servicesManager" value-ref="distributedServicesManager"></property>
    </resource>
-   <resource id="NetCellController" class="ro.zg.netcell.control.NetCellController">
+   <resource id="NetCellController" class="net.segoia.netcell.control.NetCellController">
       <property name="config" value-ref="netCellControllerConfiguration"></property>
    </resource>
    <!-- services descriptions -->
    <resource id="entitiesManagerServiceDesc"
-      class="ro.zg.distributed.framework.DistributedServiceDescription">
+      class="net.segoia.distributed.framework.DistributedServiceDescription">
       <property name="name" value="ENTITIES_MANAGER"></property>
    </resource>
    <resource id="executionEngineServiceDesc"
-      class="ro.zg.distributed.framework.DistributedServiceDescription">
+      class="net.segoia.distributed.framework.DistributedServiceDescription">
       <property name="name" value="EXECUTION_ENGINE"></property>
    </resource>
-   <resource id="CommandRouter" class="ro.zg.netcell.control.CommandRouter">
+   <resource id="CommandRouter" class="net.segoia.netcell.control.CommandRouter">
       <property name="distributedServicesManager" value-ref="distributedServicesManager"></property>
       <property name="commandMappings">
          <value>
@@ -53,14 +71,14 @@
                <entry key="get_definitions">
                   <value>
                      <resource id="get_definitions_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName" value="get_definitions"></property>
                         <property name="tasksList">
                            <value>
                               <list>
                                  <value>
                                     <resource id="get_definitions_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -79,14 +97,14 @@
                <entry key="execute">
                   <value>
                      <resource id="execute_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName" value="execute"></property>
                         <property name="tasksList">
                            <value>
                               <list>
                                  <value>
                                     <resource id="execute_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="executionEngineServiceDesc"></property>
                                        <property name="method"
@@ -109,7 +127,7 @@
                <entry key="create_entity">
                   <value>
                      <resource id="create_entity_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName" value="create_entity">
                         </property>
                         <property name="tasksList">
@@ -117,7 +135,7 @@
                               <list>
                                  <value>
                                     <resource id="create_entity_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -138,7 +156,7 @@
                                  </value>
                                  <value>
                                     <resource id="create_entity_task2"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -157,7 +175,7 @@
                <entry key="create_entity_dir_structure">
                   <value>
                      <resource id="create_entity_dir_structure_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName"
                            value="create_entity_dir_structure"></property>
                         <property name="tasksList">
@@ -166,7 +184,7 @@
                                  <value>
                                     <resource
                                        id="create_entity_dir_structure_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -188,7 +206,7 @@
                                  <value>
                                     <resource
                                        id="create_entity_dir_structure_task2"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -207,14 +225,14 @@
                <entry key="update_entity">
                   <value>
                      <resource id="update_entity_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName" value="update_entity"></property>
                         <property name="tasksList">
                            <value>
                               <list>
                                  <value>
                                     <resource id="update_entity_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -235,7 +253,7 @@
                                  </value>
                                  <value>
                                     <resource id="update_entity_task2"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -254,14 +272,14 @@
                <entry key="remove_entity">
                   <value>
                      <resource id="remove_entity_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName" value="remove_entity"></property>
                         <property name="tasksList">
                            <value>
                               <list>
                                  <value>
                                     <resource id="remove_entity_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -282,7 +300,7 @@
                                  </value>
                                  <value>
                                     <resource id="remove_entity_task2"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -301,7 +319,7 @@
                <entry key="get_definition_types">
                   <value>
                      <resource id="get_definition_types_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName" value="get_definition_types"></property>
                         <property name="tasksList">
                            <value>
@@ -309,7 +327,7 @@
                                  <value>
                                     <resource
                                        id="get_definition_types_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -336,7 +354,7 @@
                <entry key="get_templates_for_entity">
                   <value>
                      <resource id="get_templates_for_entity_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName"
                            value="get_templates_for_entity"></property>
                         <property name="tasksList">
@@ -345,7 +363,7 @@
                                  <value>
                                     <resource
                                        id="get_templates_for_entity_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -373,7 +391,7 @@
                   <value>
                      <resource
                         id="get_workflow_definition_summaries_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName"
                            value="get_workflow_definition_summaries"></property>
                         <property name="tasksList">
@@ -382,7 +400,7 @@
                                  <value>
                                     <resource
                                        id="get_workflow_definition_summaries_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="entitiesManagerServiceDesc"></property>
                                        <property name="method"
@@ -399,14 +417,14 @@
                <entry key="reload_engine">
                   <value>
                      <resource id="reload_engine_command"
-                        class="ro.zg.netcell.control.commands.mapping.CommandToTaskMapping">
+                        class="net.segoia.netcell.control.commands.mapping.CommandToTaskMapping">
                         <property name="commandName" value="reload_engine"></property>
                         <property name="tasksList">
                            <value>
                               <list>
                                  <value>
                                     <resource id="reload_engine_task1"
-                                       class="ro.zg.netcell.control.commands.mapping.TaskMappingInfo">
+                                       class="net.segoia.netcell.control.commands.mapping.TaskMappingInfo">
                                        <property name="serviceDescription"
                                           value-ref="executionEngineServiceDesc"></property>
                                        <property name="method"
@@ -428,18 +446,18 @@
       </property>
    </resource>
    <resource id="defaultMonitoringManager"
-      class="ro.zg.util.monitoring.DefaultMonitoringManager"></resource>
-   <resource id="requestsManager" class="ro.zg.netcell.control.RequestsManager">
+      class="net.segoia.util.monitoring.DefaultMonitoringManager"></resource>
+   <resource id="requestsManager" class="net.segoia.netcell.control.RequestsManager">
       <!-- <property name="persistenceAgent" value-ref="hbasePersistenceAgent"></property> -->
    </resource>
    <resource id="CommandControllerWrapper"
-      class="ro.zg.netcell.control.CommandControllerWrapper">
+      class="net.segoia.netcell.control.CommandControllerWrapper">
       <property name="wrappedExecutionEntity" value-ref="CommandRouter"></property>
       <property name="exceptionHandler" value-ref="BorderExceptionHandler"></property>
       <property name="monitoringManager" value-ref="defaultMonitoringManager"></property>
       <property name="requestsManager" value-ref="requestsManager"></property>
    </resource>
-   <resource id="CommandController" class="ro.zg.netcell.control.CommandController">
+   <resource id="CommandController" class="net.segoia.netcell.control.CommandController">
       <property name="commandExecutors">
          <value>
             <map>
@@ -471,31 +489,31 @@
          </value>
       </property>
    </resource>
-   <resource id="getDefinitionsCommand" class="ro.zg.netcell.control.commands.GetDefinitions">
+   <resource id="getDefinitionsCommand" class="net.segoia.netcell.control.commands.GetDefinitions">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="executeEntityCommand" class="ro.zg.netcell.control.commands.ExecuteEntity">
+   <resource id="executeEntityCommand" class="net.segoia.netcell.control.commands.ExecuteEntity">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="createEntityCommand" class="ro.zg.netcell.control.commands.CreateEntity">
+   <resource id="createEntityCommand" class="net.segoia.netcell.control.commands.CreateEntity">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="updateEntityCommand" class="ro.zg.netcell.control.commands.UpdateEntity">
+   <resource id="updateEntityCommand" class="net.segoia.netcell.control.commands.UpdateEntity">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
    <resource id="getDefinitionTypes"
-      class="ro.zg.netcell.control.commands.GetDefinitionTypes">
+      class="net.segoia.netcell.control.commands.GetDefinitionTypes">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
-   <resource id="removeEntityCommand" class="ro.zg.netcell.control.commands.RemoveEntity">
+   <resource id="removeEntityCommand" class="net.segoia.netcell.control.commands.RemoveEntity">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
    <resource id="getTemplatesForEntity"
-      class="ro.zg.netcell.control.commands.GetTemplatesForEntity">
+      class="net.segoia.netcell.control.commands.GetTemplatesForEntity">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
    <resource id="getWorkflowDefinitionSummaries"
-      class="ro.zg.netcell.control.commands.GetWorkflowDefinitionSummaries">
+      class="net.segoia.netcell.control.commands.GetWorkflowDefinitionSummaries">
       <property name="netCellController" value-ref="NetCellController"></property>
    </resource>
 </resources>

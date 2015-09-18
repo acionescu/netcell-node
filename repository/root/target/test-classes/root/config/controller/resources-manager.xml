@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources SYSTEM "../../../dtds/resources.dtd">
 <resources>
-   <resource id="resourcesManager" class="ro.zg.netcell.control.ResourcesManager"
+   <resource id="resourcesManager" class="net.segoia.netcell.control.ResourcesManager"
       init-method="init">
       <property name="rootDir" value="root"></property>
       <property name="resourcesRelativePaths">

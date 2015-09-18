@@ -2,5 +2,5 @@
 <!DOCTYPE resources SYSTEM "../../dtds/workflow-engine.dtd">
 
 <resources>
-	<resource id="dynamicExecutionEntity" class="ro.zg.util.execution.test.DynamicExecutionEntity"></resource>
+	<resource id="dynamicExecutionEntity" class="net.segoia.util.execution.test.DynamicExecutionEntity"></resource>
 </resources>

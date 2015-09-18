@@ -2,7 +2,7 @@
 <!DOCTYPE entities SYSTEM "../../dtds/entities.dtd">
 <entities>
 	<entity type="simple-component" id="paramsTesterComp"
-		class="ro.zg.netcell.test.ParamsTesterComp" />
+		class="net.segoia.netcell.test.ParamsTesterComp" />
 <!--		-->
 <!--	<entity id="wfcompinputTest" type="workflow-component-input">-->
 <!--		<entity type="dynamic-parameters">-->

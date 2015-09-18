@@ -23,8 +23,12 @@ mvn clean dependency:copy-dependencies
 # Configuration
 
 Basically everything should work out of the box. 
+
 You can configure the uderlying JGroups multicast address and port by updating **JGROUPS_MCAST_ADDRESS** and **JGROUPS_MCAST_PORT**
 variables in **conf.sh**, but the defaults should work just fine.
+
+You can also change the cluster name where the node will connect to by modifying  **group.name** in **node.properties**.
+
 
 # Running
 

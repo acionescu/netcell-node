@@ -1,6 +1,6 @@
 # Description
 
-This illustrates how to install and setup a netcell node
+This illustrates how to install and setup a [Netcell](https://github.com/acionescu/netcell) node.
 
 # Requirements
 
